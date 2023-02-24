@@ -9,12 +9,11 @@ function connect(){
     // 서버 시작 동작
     socket.onopen = function (e){
         console.log("[open] Create Connection");
-        console.log("Data Server send!!!");
     };
     // 서버로부터 메시지를 전달받을 때 동작
     socket.onmessage = function(e){
-        console.log("[message] Server to Data : " + e);
-        $("wrap").append(e);
+        // console.log("[message] Server to Data : " + e);
+        $("#wrap").append("<p>" + e.data + "</p>");
     };
     // 에러 발생 시 동작
     socket.onerror = function (e){

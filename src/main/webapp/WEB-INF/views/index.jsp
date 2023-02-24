@@ -17,8 +17,9 @@
     });
 
     function connect(){
+        // Websocket 오브젝트 생성
         var socket = new WebSocket("ws://127.0.0.1:8080/ws");
-        // 서버 시작 동작
+        // 서버 시작 동작(onopen 함수 호출)
         socket.onopen = function (e){
             console.log("[open] Create Connection");
             console.log("Data Server send!!!");
