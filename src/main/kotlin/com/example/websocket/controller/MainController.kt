@@ -7,16 +7,16 @@ import org.springframework.web.servlet.ModelAndView
 
 @RestController
 class MainController {
-    @GetMapping("/")
+    @GetMapping(value = ["/index"])
     fun home(modelAndView: ModelAndView):ModelAndView{
         modelAndView.addObject("", "")
         modelAndView.viewName = "index"
         return modelAndView
     }
 
-    @RequestMapping(value = ["/ws"], method = [RequestMethod.POST])
+    /*@PostMapping(value = ["/ws"])
     fun postMessage(@RequestBody message: String, request:HttpServletRequest){
         val session: HttpSession = request.session
         session.setAttribute("message", message)
-    }
+    }*/
 }
