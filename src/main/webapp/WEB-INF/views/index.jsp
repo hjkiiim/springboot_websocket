@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 
 <!DOCTYPE html>
@@ -6,13 +6,12 @@
     <meta charset="UTF-8">
     <title>TEST</title>
 </head>
-</head>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
+<%--<script type="text/javascript" src="js/app.js"></script>--%>
 <body>
-<script>
+<script type="text/javascript">
     var ws;
-
-    $(window).ready(function() {
+    $(document).ready(function() {
         connect();
     });
 
@@ -29,6 +28,7 @@
             console.log("[message] Server to Data : " + e.data);
             $("#wrap").append("<p>" + e.data + "</p>");
         };
+        $("#wrap").scrollTop = $("#wrap").scrollHeight;
         // 에러 발생 시 동작
         socket.onerror = function (e){
             console.log("[error] " + e.data);
@@ -43,8 +43,7 @@
         };
     }
 </script>
-<div id="wrap">
+<div id="wrap" style="overflow-scrolling: auto">
 </div>
-<%--<script src="./js/index.js" type="text/javascript"></script>--%>
 </body>
 </html>
