@@ -16,7 +16,6 @@ open class WebSocketHandler : TextWebSocketHandler() {
     @Override
     @Throws(Exception::class)
     override fun afterConnectionEstablished(session: WebSocketSession) {
-        service = MainServiceImpl
         super.afterConnectionEstablished(session)
         service.addSession(session)
         println("연결 : $session")

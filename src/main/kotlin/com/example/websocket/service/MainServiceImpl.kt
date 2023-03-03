@@ -11,14 +11,14 @@ import kotlin.collections.ArrayList
 @Service("MainService")
 class MainServiceImpl: MainService {*/
 @Service("MainService")
-object MainServiceImpl : MainService {
+class MainServiceImpl : MainService {
 
     private var sessions: MutableList<WebSocketSession> = Collections.synchronizedList(ArrayList<WebSocketSession>())
 
     @Override
     override fun addSession(session: WebSocketSession) {
         sessions.add(session)
-        session.sendMessage(TextMessage(session.toString()))
+//        session.sendMessage(TextMessage(session.toString()))
     }
 
     @Override
